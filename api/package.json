@@ -1,0 +1,39 @@
+{
+   "name": "ipdv",
+   "version": "0.0.1",
+   "description": "Teste desenvolvedor Node - IPDV",
+   "type": "commonjs",
+   "devDependencies": {
+      "@types/bcrypt": "^5.0.0",
+      "@types/cookie-parser": "^1.4.3",
+      "@types/express": "^4.17.13",
+      "@types/jsonwebtoken": "^8.5.8",
+      "@types/node": "^16.11.10",
+      "nodemon": "^2.0.16",
+      "ts-node": "10.7.0",
+      "ts-node-dev": "^2.0.0",
+      "tsconfig-paths": "^4.2.0",
+      "typescript": "4.5.2"
+   },
+   "dependencies": {
+      "bcrypt": "^5.0.1",
+      "cookie-parser": "^1.4.6",
+      "cors": "^2.8.5",
+      "dotenv": "^16.3.1",
+      "express": "^4.18.1",
+      "jsonwebtoken": "^8.5.1",
+      "morgan": "^1.10.0",
+      "pg": "^8.11.2",
+      "reflect-metadata": "^0.1.13",
+      "ts-node-dev": "^2.0.0",
+      "typeorm": "0.3.6"
+   },
+   "scripts": {
+      "dev": "nodemon --exec ts-node src/server.ts",
+      "start": "ts-node src/index.ts",
+      "typeorm": "typeorm-ts-node-commonjs -d src/data-source.ts",
+      "migrate:create": "cd ./src/db/migrations && typeorm-ts-node-commonjs migration:create",
+      "migrate:run": "cd ./src/db/migrations && npm run typeorm migration:run",
+      "migrate:rollback": "cd ./src/db/migrations && npm run typeorm migration:revert"
+   }
+}
